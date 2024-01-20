@@ -110,32 +110,34 @@ function displayRepositories(repositories, currentPage) {
         const repo = repositories[index];
 
         const repoCard = `
-          <div class="col-md-6">
-            <div class="card h-100 mb-3">
-              <div class="card-body">
-                <h5 class="card-title">${repo.name}</h5>
-                <p class="card-text">${repo.description || ""}</p>
-                <div class="mt-2">
-                  ${
-                    repo.language
-                      ? `<span class="badge bg-primary">${repo.language}</span>`
-                      : ""
-                  }
-                  ${
-                    repo.topics
-                      ? repo.topics
-                          .map(
-                            (topic) =>
-                              `<span class="badge bg-secondary">${topic}</span>`
-                          )
-                          .join(" ")
-                      : ""
-                  }
-                </div>
+        <div class="col-md-6">
+          <a href="${
+            repo.html_url
+          }" target="_blank" style="text-decoration: none;" class="card h-100 mb-3">
+            <div class="card-body">
+              <h5 class="card-title">${repo.name}</h5>
+              <p class="card-text">${repo.description || ""}</p>
+              <div class="mt-2">
+                ${
+                  repo.language
+                    ? `<span class="badge bg-primary">${repo.language}</span>`
+                    : ""
+                }
+                ${
+                  repo.topics
+                    ? repo.topics
+                        .map(
+                          (topic) =>
+                            `<span class="badge bg-secondary">${topic}</span>`
+                        )
+                        .join(" ")
+                    : ""
+                }
               </div>
             </div>
-          </div>
-        `;
+          </a>
+        </div>
+      `;
 
         rowDiv.append(repoCard);
       }
