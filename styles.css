@@ -1,0 +1,11 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+#repositoriesList {
+    margin-top: 20px;
+}
+
+#pagination {
+    margin-top: 20px;
+}
